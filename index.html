@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piedra, Papel,</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
+
+<header>
+  <h1>Pierda, Papel, Tijeras</h1>
+</header>
+
+
+
     <section id="game">
+      
       <div id="containerGlobal">
         <div class="zonaJugador">
           <p class="title">🧑‍🦱</p class="title">
@@ -30,6 +41,19 @@
       <button class="btnOpcion" id="btnPa" value="🖐️">🖐️</button>
       <button class="btnOpcion" id="btnTi" value="✌️">✌️</button>
     </section>
+
+    <section id="marcador">
+      <div class="marcadorContainer">
+        <div class="marcadorUser">
+          <p id="resultUser">0</p>
+        </div>
+        <div class="marcadorMaquina">
+          <p id="resultMaquina">0</p>
+        </div>
+      </div>
+      
+      
+      </section>
     <script src="scripts.js"></script>
   </body>
 </html>

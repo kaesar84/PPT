@@ -14,18 +14,22 @@ function start() {
 function buscarGanador(valorMarcado, maquina) {
     if (valorMarcado === maquina) {
         console.log("Empate")
-        alert("EMPATE");
+        // alert("EMPATE");
       } else if (
         (valorMarcado === "✊" && maquina === "✌️") ||
         (valorMarcado === "🖐️" && maquina === "✊") ||
         (valorMarcado === "✌️" && maquina === "🖐️")
       ) {
         console.log("Ganaste");
-        alert("GANASTE");
+        // alert("GANASTE");
+        contadorResultUser++;
       } else {
-        alert("PERDISTE");
+        // alert("PERDISTE");
         console.log("Gana máquina");
+        contadorResultMaquina++;
       }
+
+      actualizarMarcador(contadorResultUser,contadorResultMaquina);
 
 }
 
@@ -36,6 +40,15 @@ let btnTi = document.getElementById("btnTi");
 let opcionJugador = document.getElementById("opcionJugador");
 let opcionMaquina = document.getElementById("opcionMaquina");
 
+let resultUser = document.getElementById("resultUser");
+let resultMaquina = document.getElementById("resultMaquina");
+
+let contadorResultUser=0;
+let contadorResultMaquina=0;
+
+
+
+
 function seleccionJugador() {
   let valorMarcado = this.value;
   opcionJugador.textContent = valorMarcado;
@@ -45,13 +58,7 @@ function seleccionJugador() {
 //   console.log("valor marcado" + valorMarcado);
 //   console.log("valor maquina" + maquina);
 
-buscarGanador(valorMarcado,maquina);
-  
-
-
-
-
-  
+buscarGanador(valorMarcado,maquina); 
 }
 
 function seleccionMaquina() {
@@ -61,6 +68,19 @@ function seleccionMaquina() {
   opcionMaquina.textContent = maquina;
   return maquina;
 }
+
+
+
+
+
+function actualizarMarcador(user,maquina){
+  resultUser.textContent=user;
+  resultMaquina.textContent = maquina;
+}
+
+
+
+
 
 btnPi.addEventListener("click", seleccionJugador);
 btnPa.addEventListener("click", seleccionJugador);

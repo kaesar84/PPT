@@ -4,8 +4,18 @@
   box-sizing: border-box;
   
 }
+header{
+  width: 100vw;
+  background-color: #03045E;
+  display:flex;
+  align-self:center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+  font-family: 'Press Start 2P', system-ui;
+}
 
-#game, #containerBtn {
+#game, #containerBtn, #marcador {
   width: 100vw;
   height: auto;
   display: flex;
@@ -21,7 +31,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   border-radius: 5px;
  
 }
@@ -42,12 +52,11 @@
 
 #containerBtn{
     padding: 3rem;
-    gap: 5rem;
+    
 }
 
 .btnOpcion{
     font-size: 6rem;
-    border-radius: 100px;
     border: none;
     transition: all 0.5s;
     background-color: transparent;
@@ -66,4 +75,21 @@
     padding: 0.5rem 0rem;
     font-size: 3rem;
     border-radius: 5px;
+}
+
+.marcadorContainer{
+  display: flex;
+  padding: 2rem;
+  gap: 3rem;
+  font-size: 3rem;
+  color: white;
+  font-family: 'Press Start 2P', system-ui;
+  
+
+}
+.marcadorUser, .marcadorMaquina{
+background-color: #023E8A;
+border: 5px solid #03045E;
+padding: 2rem;
+border-radius: 5px;
 }
