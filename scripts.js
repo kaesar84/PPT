@@ -12,6 +12,13 @@ let resultMaquina = document.getElementById("resultMaquina");
 let contadorResultUser = 0;
 let contadorResultMaquina = 0;
 
+let modalWelcome = document.getElementById("modalWelcome");
+let btnInicio = document.getElementById("btnInicio");
+
+function ocultarBienvenida() {
+  modalWelcome.style.display = "none";
+
+}
 
 // Funciones
 function start() {
@@ -77,3 +84,5 @@ function actualizarMarcador(user, maquina) {
 btnPi.addEventListener("click", seleccionJugador);
 btnPa.addEventListener("click", seleccionJugador);
 btnTi.addEventListener("click", seleccionJugador);
+
+btnInicio.addEventListener("click", ocultarBienvenida);
