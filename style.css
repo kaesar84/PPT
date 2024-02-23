@@ -25,12 +25,7 @@ footer {
   height: 2rem;
 }
 
-@media screen and (max-width: 390px) {
-  header {
-    padding: 2rem 0.25rem;
-    font-size: 0.95rem;
-  }
-}
+
 
 #game,
 #containerBtn,
@@ -151,6 +146,21 @@ footer {
   z-index: 5;
   background-color: #caf0f8;
 }
+#modalGanador{
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #caf0f8;
+}
+
+
+
+
 
 .bienvenidaContainer{
   width: 50vw;
@@ -177,7 +187,7 @@ line-height: 1.5;
   font-size: 3rem;
 }
 
-#btnInicio{
+#btnInicio, #btnReset{
   padding: 1.5rem;
   border-radius: 5px;
   border: none;
@@ -186,8 +196,27 @@ line-height: 1.5;
   transition: all 0.5s;
 }
 
-#btnInicio:hover{
+#btnInicio:hover, #btnReset:hover{
   background-color: #03045e;
   color: white;
   scale: 1.1;
+}
+
+#ganador{
+  font-size: 5rem;
+}
+
+@media (200px <= width <= 750px) {
+  header {
+    padding: 2rem 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .bienvenidaContainer{
+    width: 95vw;
+    height: 50vh;
+    gap: 1.10rem;
+
+  }
+
 }

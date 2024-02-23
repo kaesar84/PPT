@@ -15,9 +15,13 @@ let contadorResultMaquina = 0;
 let modalWelcome = document.getElementById("modalWelcome");
 let btnInicio = document.getElementById("btnInicio");
 
+let modalGanador = document.getElementById("modalGanador");
+let btnReset = document.getElementById("btnReset");
+
+let ganador = document.getElementById("ganador");
+
 function ocultarBienvenida() {
   modalWelcome.style.display = "none";
-
 }
 
 // Funciones
@@ -52,6 +56,40 @@ function buscarGanador(valorMarcado, maquina) {
     contadorResultMaquina++;
   }
 
+  if (contadorResultUser > 9) {
+    // alert("Gana Humano");
+    let humansWin = "humansWin";
+    mostrarModalGanador(humansWin);
+    reset();
+  } else if (contadorResultMaquina > 9) {
+    // alert("Gana Maquina");
+    let machineWin = "machineWin";
+    mostrarModalGanador(machineWin);
+    reset();
+  } else {
+    actualizarMarcador(contadorResultUser, contadorResultMaquina);
+  }
+
+  // console.log(contadorResultUser)
+  // console.log(contadorResultMaquina)
+}
+
+function mostrarModalGanador(ganadorString) {
+  modalGanador.style.display = "flex";
+  if (ganadorString == "humansWin") {
+    ganador.textContent = "🧔";
+  } else if (ganadorString == "machineWin") {
+    ganador.textContent = "🤖";
+  }
+}
+
+function ocultarModalGanador() {
+  modalGanador.style.display = "none";
+}
+
+function reset() {
+  contadorResultUser = 0;
+  contadorResultMaquina = 0;
   actualizarMarcador(contadorResultUser, contadorResultMaquina);
 }
 
@@ -86,3 +124,4 @@ btnPa.addEventListener("click", seleccionJugador);
 btnTi.addEventListener("click", seleccionJugador);
 
 btnInicio.addEventListener("click", ocultarBienvenida);
+btnReset.addEventListener("click", ocultarModalGanador);
